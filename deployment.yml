@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: flaskdemo
-  name: flaskdemo
+    app: coffee-app
+  name: coffee-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: flaskdemo
+      app: coffee-app
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: flaskdemo
+        app: coffee-app
     spec:
       containers:
       - image: mikey6/coffe-club-reg-app:latest
-        name: flaskdemo
+        name: coffee-app
         resources: {}
 status: {}
 ---
@@ -35,4 +35,4 @@ spec:
   - port: 80
     targetPort: 5000
   selector:
-    app: flaskdemo
+    app: coffee-app
