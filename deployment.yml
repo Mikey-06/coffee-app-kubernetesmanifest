@@ -18,7 +18,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: mikey6/coffe-club-reg-app:latest
+      - image: mikey6/coffe-club-reg-app:1
         name: flaskdemo
         resources: {}
 status: {}
