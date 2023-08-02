@@ -18,7 +18,7 @@ spec:
         app: coffee-app
     spec:
       containers:
-      - image: mikey6/coffe-club-reg-app:latest
+      - image: mikey6/coffe-club-reg-app:25
         name: coffee-app
         resources: {}
 status: {}
