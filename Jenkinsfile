@@ -16,7 +16,7 @@ node {
                         //sh "git switch master"
                         sh "cat deployment.yml"
                       //sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${DOCKERTAG}+g' deployment.yaml"
-                        sh "sed -i 's+mikey6/coffee-club-reg-app.*+mikey6/coffee-club-reg-app:${DOCKERTAG}+g' deployment.yml"
+                        sh "sed -i 's+mikey6/coffee.*+mikey6/coffee:${DOCKERTAG}+g' deployment.yml"
                         sh "cat deployment.yml"
                         sh "git add ."
                         sh "git diff --cached"
