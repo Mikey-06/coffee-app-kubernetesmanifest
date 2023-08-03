@@ -1,38 +1,38 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
+  name: coffee-app-deployment
   labels:
     app: coffee-app
-  name: coffee-app
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: coffee-app
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: coffee-app
     spec:
       containers:
-      - image: mikey6/coffee-club-reg-app:41
-        name: coffee-app
-        resources: {}
-status: {}
+      - name: coffee-app
+        image: mikey6/coffee-club-reg-app:41
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: lb-service
-  labels:
-    app: lb-service
+  name: clb-regapp
+  labels: 
+    app: coffee-app
 spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-    targetPort: 5000
+  type: LoadBalancer 
   selector:
     app: coffee-app
+  ports: 
+    - port: 80
+      targetPort: 8080
