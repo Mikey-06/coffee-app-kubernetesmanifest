@@ -19,7 +19,7 @@ node {
                         sh "cat deployment.yml"
                         sh "git add ."
                         sh "git diff --cached"
-                        sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
+                        sh "git commit -m 'Done by Jenkins Job Coffee_Club_Reg_App(Update-Manifest): ${env.BUILD_NUMBER}'"
                         sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/coffee-app-kubernetesmanifest.git HEAD:main"
       }
     }
