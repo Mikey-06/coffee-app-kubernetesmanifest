@@ -2,8 +2,8 @@ node {
     def app
 
     stage('Clone repository') {
-        
-     git branch: 'main', url: 'https://github.com/Mikey-06/coffee-app-kubernetesmanifest.git'
+     checkout scm 
+     //git branch: 'main', url: 'https://github.com/Mikey-06/coffee-app-kubernetesmanifest.git'
     }
 
     stage('Update GIT') {
@@ -15,6 +15,7 @@ node {
                         sh "git config user.name Mikey-06"
                         //sh "git switch master"
                         sh "cat deployment.yml"
+                      //sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${DOCKERTAG}+g' deployment.yaml"
                         sh "sed -i 's+mikey6/coffee-club-reg-app.*+mikey6/coffee-club-reg-app:${DOCKERTAG}+g' deployment.yml"
                         sh "cat deployment.yml"
                         sh "git add ."
